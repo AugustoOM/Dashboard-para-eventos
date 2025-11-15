@@ -4,7 +4,7 @@ Dashboard interactivo para gestión de venta de entradas y eventos, construido c
 
 ## Características
 
-- 🎨 **Tema oscuro** con color naranja (#ea590c) como color principal
+- 🎨 **Tema oscuro** con naranja como color principal
 - 📊 **Métricas en tiempo real**: Total de entradas vendidas y dinero recaudado
 - 🎯 **Eventos más populares**: Visualización de los top 5 eventos por entradas vendidas
 - 💰 **Distribución de ingresos**: Gráfico de barras mostrando la distribución de ingresos por evento
