@@ -13,11 +13,18 @@ function StatsCard({ title, value, icon, trend }: StatsCardProps) {
   const isNumber = typeof value === 'string' && !value.startsWith('$')
 
   useEffect(() => {
-    if (typeof value === 'number' || (typeof value === 'string' && value.match(/^\d/))) {
-      const targetValue = typeof value === 'number' 
-        ? value 
-        : parseInt(value.replace(/[^0-9]/g, ''), 10) || 0
-      
+    // Extraer el número del valor, ya sea number o string (con o sin $)
+    let targetValue = 0
+    
+    if (typeof value === 'number') {
+      targetValue = value
+    } else if (typeof value === 'string') {
+      // Extraer solo los dígitos del string (funciona con "$123" o "123")
+      const numericString = value.replace(/[^0-9]/g, '')
+      targetValue = parseInt(numericString, 10) || 0
+    }
+
+    if (targetValue > 0) {
       const duration = 1500
       const steps = 60
       const increment = targetValue / steps
